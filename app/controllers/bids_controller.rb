@@ -6,7 +6,10 @@ class BidsController < ApplicationController
   # GET /bids.json
   def index
     response = RestClient.get 'http://api.bitvalor.com/v1/order_book.json'
-    @data = JSON.parse(response.body)
+    data = JSON.parse(response.body)["bids"]
+    @fox = data.select {|element| element[0] == "FOX"}
+    @b2u = data.select {|element| element[0] == "B2U"}
+    @mbt = data.select {|element| element[0] == "MBT"}
   end
 
   # GET /bids/1

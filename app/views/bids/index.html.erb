@@ -1,16 +1,44 @@
 <h1>Listing fetched data from API</h1>
+<div class="form-group">
+    <label for="bankSelect">Example Bitcoin Banks</label>
+    <select class="form-control" id="bankSelect">
+      <option>MBT</option>
+      <option>B2U</option>
+      <option>FOX</option>
+    </select>
+  </div>
 <table class="table table-hover">
   <thead>
     <tr>
       <th>#</th>
-      <th>First Name</th>
+      <th>Bitcoin Banks</th>
       <th>Value</th>
       <th>Volume</th>
     </tr>
   </thead>
-  <tbody>
-    <%- @data["bids"].each_with_index do |data, index| %>
-      <tr>
+  <tbody id="mbt-table">
+    <%- @mbt.each_with_index do |data, index| %>
+      <tr id="mbt">
+        <th scope="row"><%= index %></th>
+        <td><%= data[0] %></td>
+        <td><%= data[1] %></td>
+        <td><%= data[2] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tbody id="b2u-table">
+    <%- @b2u.each_with_index do |data, index| %>
+      <tr id="mbt">
+        <th scope="row"><%= index %></th>
+        <td><%= data[0] %></td>
+        <td><%= data[1] %></td>
+        <td><%= data[2] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tbody id="fox-table">
+    <%- @fox.each_with_index do |data, index| %>
+      <tr id="mbt">
         <th scope="row"><%= index %></th>
         <td><%= data[0] %></td>
         <td><%= data[1] %></td>
