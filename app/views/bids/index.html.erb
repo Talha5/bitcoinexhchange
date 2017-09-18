@@ -1,0 +1,21 @@
+<h1>Listing fetched data from API</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Value</th>
+      <th>Volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @data["bids"].each_with_index do |data, index| %>
+      <tr>
+        <th scope="row"><%= index %></th>
+        <td><%= data[0] %></td>
+        <td><%= data[1] %></td>
+        <td><%= data[2] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
