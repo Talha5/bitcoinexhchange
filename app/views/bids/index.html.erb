@@ -1,12 +1,20 @@
 <h1>Listing fetched data from API</h1>
 <div class="form-group">
-    <label for="bankSelect">Example Bitcoin Banks</label>
-    <select class="form-control" id="bankSelect">
-      <option>MBT</option>
-      <option>B2U</option>
-      <option>FOX</option>
-    </select>
-  </div>
+  <label for="bankSelect">Example Bitcoin Banks</label>
+  <select class="form-control" id="bankSelect">
+    <option>MBT</option>
+    <option>B2U</option>
+    <option>FOX</option>
+  </select>
+</div>
+<div class="row">
+  <label class="col-md-2">Enter Fox Value</label>
+  <input type="text" id="fox-amount" class="col-md-2">
+  <button id="fox-output" class="col-md-2">Check Volume</button>
+  <%= image_tag 'loading.gif', class: 'hide col-md-2 img-circle img-responsive', id: 'loading-img' %>
+  <label hidden="true" id="fox-output-label" class="col-md-2">ada</label>
+</div>
+
 <table class="table table-hover">
   <thead>
     <tr>

@@ -1,0 +1,11 @@
+.welcome {
+  background-image: url(image-path('loading.gif'));
+}
+
+.hide{
+	display: none;
+}
+
+.show{
+	display: block;
+}
