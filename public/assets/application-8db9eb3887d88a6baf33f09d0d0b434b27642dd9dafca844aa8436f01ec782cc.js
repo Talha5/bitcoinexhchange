@@ -16931,9 +16931,36 @@ function hide_tables(){
 	$('#mbt-table').hide();
 }
 
+function fox_fetch_data(){
+	$('#fox-output').prop('disabled', true);
+	$("#fox-amount").change(function () {
+		$('#fox-output').prop('disabled', false);
+		$("#fox-output").click(function(e) {
+	    $.ajax({
+        type: "GET",
+        url: "/fox_volume",
+        data: { 
+          data: parseFloat($("#fox-amount").val())
+        },
+        beforeSend: function(){
+        	$('#loading-img').addClass("show");
+        },
+        success: function(result) {
+        	$('#loading-img').removeClass("show").addClass('hide');
+        	$('#fox-output-label').prop('hidden', false);
+        	$('#fox-output-label').text(result);
+        }
+	    });
+		});
+
+
+	});
+}
+
 $(document).ready(function() {
 	hide_tables();
 	show_hide_tables();
+	fox_fetch_data();
 });
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.

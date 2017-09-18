@@ -9319,6 +9319,17 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.welcome {
+  background-image: url(image-path('loading.gif'));
+}
+
+.hide{
+	display: none;
+}
+
+.show{
+	display: block;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
